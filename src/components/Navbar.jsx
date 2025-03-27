@@ -3,8 +3,18 @@ import logo from '../../public/assets/docmate.png';
 import Link from "next/link";
 
 export default function Navbar() {
+
+    const navMenu = () => {
+        return(
+            <>
+            <li><Link href="/">Home</Link></li>
+            <li><Link href="/">All Doctors</Link></li>
+            <li><Link href="/">Doctor</Link></li>
+            </>
+        )
+    }
     return (
-        <div className="border-b fixed w-full top-0 z-50 bg-gradient-to-r from-[#042020] via-[#272f30] to-[#0EA5E9] text-white">
+        <div className="border-b w-full top-0 sticky z-50 bg-gradient-to-r from-[#042020] via-[#1e4046] to-[#0EA5E9] text-white">
             <div className="navbar max-w-screen-xl mx-auto px-0">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -15,25 +25,15 @@ export default function Navbar() {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                            <li><a>Item 1</a></li>
-                            <li>
-                                <a>Parent</a>
-                                <ul className="p-2">
-                                    <li><a>Submenu 1</a></li>
-                                    <li><a>Submenu 2</a></li>
-                                </ul>
-                            </li>
-                            <li><a>Item 3</a></li>
+                            className="menu menu-sm dropdown-content bg-black rounded-box z-1 mt-3 w-52 p-2 shadow">
+                            {navMenu()}
                         </ul>
                     </div>
                     <a className=""><img src="assets/docmate.png" alt="DocMate Logo" className="w-32"/></a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                        <li><Link href="/">Home</Link></li>
-                        <li><Link href="/">All Doctors</Link></li>
-                        <li><Link href="/">Doctor</Link></li>
+                        {navMenu()}
                         
                         
                     </ul>
