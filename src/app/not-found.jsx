@@ -14,7 +14,7 @@ export default function Custom404() {
 
             {/* Homepage Button */}
             <Link href="/" className="mt-6 px-6 py-3 text-lg border border-black font-semibold hover:bg-black hover:text-white transition-all">
-                HOMEPAGE
+                HOME PAGE
             </Link>
 
             {/* Social Icons */}
