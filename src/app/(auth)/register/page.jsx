@@ -19,7 +19,7 @@ export default function RegisterPage() {
     });
 
     if (res.ok) {
-      router.push("/login");
+      router.push("/");
     } else {
       alert("Registration failed");
     }
@@ -28,7 +28,7 @@ export default function RegisterPage() {
   return (
     <div className="flex min-h-screen">
       {/* Left column (form) */}
-      <div className="flex-1 flex items-center justify-center px-4 py-8 text-white">
+      <div className="flex-1 flex items-center justify-center px-4 py-8 text-black">
         <div className="max-w-md w-full">
           <h1 className="text-3xl font-bold mb-2">Create Account</h1>
           <p className="text-gray-600 mb-6">Join our community today</p>
