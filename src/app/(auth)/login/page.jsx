@@ -27,7 +27,7 @@ export default function LoginPage() {
   return (
     <div className="flex min-h-screen">
       {/* Left column (form) */}
-      <div className="flex-1 flex items-center justify-center px-4 py-8 text-white">
+      <div className="flex-1 flex items-center justify-center px-4 py-8 text-black">
         <div className="max-w-md w-full">
           <h1 className="text-3xl font-bold mb-2">Sign In</h1>
           <p className="text-gray-600 mb-6">Welcome back! Please sign in.</p>
@@ -59,7 +59,7 @@ export default function LoginPage() {
 
             <button
               type="submit"
-              className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors"
+              className="w-full bg-blue-600 text-black py-2 px-4 rounded hover:bg-blue-700 transition-colors"
             >
               Sign In
             </button>
