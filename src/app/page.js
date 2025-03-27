@@ -1,12 +1,6 @@
-import Image from "next/image";
-import BannerSection from "./components/BannerSection";
-import About from "@/components/About";
+import Image from "next/image";git status
 
-export default function Home() {
-  return (
-    <div>
-      <BannerSection />
-      <About/>
+      <Updates />
     </div>
   );
 }
