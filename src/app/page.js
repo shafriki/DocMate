@@ -2,6 +2,8 @@ import Image from "next/image";
 import BannerSection from "./components/BannerSection";
 import Updates from "./components/Updates";
 import About from "@/components/About";
+import HospitalOverview from "@/components/HospitalOverview"
+import Services from "@/components/Services";
 import Appointment from "./components/Appointment";
 
 export default function Home() {
@@ -10,7 +12,11 @@ export default function Home() {
       <BannerSection />
       <Updates />
       <About/>
-      <Appointment />
+      
+      
+      <Appointment/>
+      <Services/>
+      <HospitalOverview></HospitalOverview>
     </div>
   );
 }
