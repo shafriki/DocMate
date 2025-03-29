@@ -16,6 +16,7 @@ export default function Navbar() {
     { name: "Home", href: "/" },
     { name: "Features", href: "/features" },
     { name: "Contact", href: "/contact" },
+    { name: "About Us", href: "/pages/about" },
     ...(session ? [{ name: "Dashboard", href: `/dashboard/${session?.user?.role}/home` }] : []),
   ];
 
