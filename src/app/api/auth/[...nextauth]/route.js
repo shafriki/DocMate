@@ -10,7 +10,7 @@ const handler = NextAuth({
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        // Use string concatenation instead of template literals
+        // Using string concatenation for the URL
         const res = await fetch(process.env.NEXTAUTH_URL + "/api/login", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -33,12 +33,14 @@ const handler = NextAuth({
       if (user) {
         token.id = user.id;
         token.email = user.email;
+        token.role = user.role;
       }
       return token;
     },
     async session({ session, token }) {
       session.user.id = token.id;
       session.user.email = token.email;
+      session.user.role = token.role;
       return session;
     },
   },

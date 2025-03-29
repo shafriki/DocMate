@@ -14,6 +14,11 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: [true, "Password is required"],
   },
+  role: {
+    type: String,
+    enum: ["user", "doctor", "admin"],
+    default: "user",
+  },
 });
 
 export default mongoose.models.User || mongoose.model("User", UserSchema);

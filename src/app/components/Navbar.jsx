@@ -16,7 +16,7 @@ export default function Navbar() {
     { name: "Home", href: "/" },
     { name: "Features", href: "/features" },
     { name: "Contact", href: "/contact" },
-    ...(session ? [{ name: "About", href: "/pages/about" }] : []),
+    ...(session ? [{ name: "Dashboard", href: `/dashboard/${session?.user?.role}/home` }] : []),
   ];
 
   const closeMenu = () => setIsOpen(false);
