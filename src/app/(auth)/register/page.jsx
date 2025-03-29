@@ -20,7 +20,7 @@ export default function RegisterPage() {
   const validate = {
     name: /^[a-zA-Z ]{2,30}$/,
     email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-    password: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/
+    password: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/,
   };
 
   const validateForm = () => {
@@ -51,6 +51,7 @@ export default function RegisterPage() {
       const res = await fetch("/api/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        // Only send name, email, and password – role is not included so the default is used.
         body: JSON.stringify({ name, email, password }),
       });
 
@@ -65,32 +66,32 @@ export default function RegisterPage() {
 
         if (result?.ok) {
           await Swal.fire({
-            icon: 'success',
-            title: 'Welcome!',
-            text: 'Registration successful!',
+            icon: "success",
+            title: "Welcome!",
+            text: "Registration successful!",
             showConfirmButton: false,
-            timer: 1500
+            timer: 1500,
           });
           router.push("/");
         } else {
           Swal.fire({
-            icon: 'error',
-            title: 'Login Failed',
-            text: 'Please try logging in manually',
+            icon: "error",
+            title: "Login Failed",
+            text: "Please try logging in manually",
           });
         }
       } else {
         Swal.fire({
-          icon: 'error',
-          title: 'Registration Failed',
-          text: data.message || 'Please check your details and try again',
+          icon: "error",
+          title: "Registration Failed",
+          text: data.message || "Please check your details and try again",
         });
       }
     } catch (error) {
       Swal.fire({
-        icon: 'error',
-        title: 'Error',
-        text: 'An unexpected error occurred',
+        icon: "error",
+        title: "Error",
+        text: "An unexpected error occurred",
       });
     } finally {
       setIsLoading(false);
@@ -119,7 +120,7 @@ export default function RegisterPage() {
                 <input
                   type="text"
                   className={`w-full pl-10 pr-4 py-3 border ${
-                    errors.name ? 'border-red-500' : 'border-gray-300'
+                    errors.name ? "border-red-500" : "border-gray-300"
                   } rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all`}
                   placeholder="John Doe"
                   value={name}
@@ -145,7 +146,7 @@ export default function RegisterPage() {
                 <input
                   type="email"
                   className={`w-full pl-10 pr-4 py-3 border ${
-                    errors.email ? 'border-red-500' : 'border-gray-300'
+                    errors.email ? "border-red-500" : "border-gray-300"
                   } rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all`}
                   placeholder="john@example.com"
                   value={email}
@@ -171,7 +172,7 @@ export default function RegisterPage() {
                 <input
                   type="password"
                   className={`w-full pl-10 pr-4 py-3 border ${
-                    errors.password ? 'border-red-500' : 'border-gray-300'
+                    errors.password ? "border-red-500" : "border-gray-300"
                   } rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all`}
                   placeholder="••••••••"
                   value={password}
