@@ -21,8 +21,11 @@ export async function POST(request) {
       return NextResponse.json({ message: "Invalid credentials" }, { status: 401 });
     }
 
-    // Return user data for NextAuth (omit sensitive info)
-    return NextResponse.json({ id: user._id, email: user.email, name: user.name }, { status: 200 });
+    // Return user data (including role)
+    return NextResponse.json(
+      { id: user._id, email: user.email, name: user.name, role: user.role },
+      { status: 200 }
+    );
   } catch (error) {
     console.error("Login error:", error);
     return NextResponse.json({ message: "Internal server error" }, { status: 500 });

@@ -12,29 +12,28 @@ export async function POST(request) {
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       return NextResponse.json(
-        { message: "User already exists" }, 
-        { status: 409 } // More appropriate status code for conflict
+        { message: "User already exists" },
+        { status: 409 }
       );
     }
 
     const hashedPassword = await bcrypt.hash(password, 12);
+    // Always assign "user" as the default role
     const user = await User.create({ 
       name, 
       email, 
-      password: hashedPassword 
+      password: hashedPassword,
+      role: "user",
     });
 
     return NextResponse.json(
-      { 
-        message: "User registered successfully", 
-        email: user.email // Return email for potential client-side use
-      }, 
+      { message: "User registered successfully", email: user.email },
       { status: 201 }
     );
   } catch (error) {
     console.error("Registration error:", error);
     return NextResponse.json(
-      { message: "Internal server error" }, 
+      { message: "Internal server error" },
       { status: 500 }
     );
   }
