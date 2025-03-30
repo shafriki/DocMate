@@ -3,11 +3,11 @@ import Marquee from 'react-fast-marquee';
 
 const Community = () => {
     return (
-        <div className="max-w-screen-xl md:mx-auto my-20 mx-4">
+        <div className="max-w-screen-xl md:mx-auto my-16 mx-4">
 
             {/* Header */}
             <h1 className="text-center text-2xl md:text-4xl font-bold text-[#34495E] mb-12">
-            Our Community
+                Join Our Marathon Achievers
             </h1>
 
             {/* Marquee Content */}
@@ -72,7 +72,7 @@ const Community = () => {
 
                     <div className="h-16 md:h-28 w-32 md:w-40 mr-5 flex-shrink-0">
                         <img
-                            src="https://i.ibb.co.com/x8cvsHWQ/four.jpg"
+                            src="https://i.ibb.co.com/fGCqgf8H/five.png"
                             alt="Marathon Achiever 8"
                             className="w-full h-full object-contain rounded-lg shadow-lg"
                         />
@@ -80,7 +80,7 @@ const Community = () => {
 
                     <div className="h-16 md:h-28 w-32 md:w-40 mr-5 flex-shrink-0">
                         <img
-                            src="https://i.ibb.co.com/fGCqgf8H/five.png"
+                            src="https://i.ibb.co.com/N64VtvyN/eight.jpg"
                             alt="Marathon Achiever 9"
                             className="w-full h-full object-contain rounded-lg shadow-lg"
                         />
@@ -88,7 +88,7 @@ const Community = () => {
 
                     <div className="h-16 md:h-28 w-32 md:w-40 mr-5 flex-shrink-0">
                         <img
-                            src="https://i.ibb.co.com/N64VtvyN/eight.jpg"
+                            src="https://i.ibb.co.com/x8cvsHWQ/four.jpg"
                             alt="Marathon Achiever 10"
                             className="w-full h-full object-contain rounded-lg shadow-lg"
                         />
