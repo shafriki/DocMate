@@ -15,7 +15,7 @@ const About = () => {
     }, []);
 
     return (
-        <div className='max-w-screen-xl mx-auto my-20'>
+        <div className='max-w-screen-xl mx-5 md:mx-auto my-20'>
             <div className="grid grid-cols-1 md:grid-cols-7 md:grid-rows-6 gap-4 md:h-[500px]">
                 {/* Short Image 1 */}
                 <div className="flex justify-center md:col-span-2 md:row-span-3" data-aos="fade-up">

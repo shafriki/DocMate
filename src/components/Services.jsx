@@ -28,7 +28,7 @@ const Services = () => {
     }, []);
 
     return (
-        <div className='max-w-screen-xl mx-auto my-20'>
+        <div className='max-w-screen-xl mx-5 md:mx-auto my-20'>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-9 gap-4">
                 {/* Health Facilities Section */}
                 <div className="lg:col-span-3 md:col-span-3 col-span-1" data-aos="fade-up">

@@ -6,6 +6,13 @@ import HospitalOverview from "@/components/HospitalOverview"
 import Services from "@/components/Services";
 import Appointment from "./components/Appointment";
 import SeeAll from "@/components/SeeAll";
+<<<<<<< HEAD
+import Community from "@/components/Community";
+import Review from "@/components/Review";
+=======
+import Review from "@/components/Review";
+import Community from "@/components/Community";
+>>>>>>> develop
 
 export default function Home() {
   return (
@@ -16,6 +23,8 @@ export default function Home() {
       <Appointment/>
       <Services/>
       <HospitalOverview></HospitalOverview>
+      <Review />
+      <Community />
       <SeeAll />
     </div>
   );
