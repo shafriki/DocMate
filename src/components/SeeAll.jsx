@@ -14,10 +14,7 @@ const SeeAll = () => {
         {/* Text Content */}
         <div className="relative max-w-7xl mx-auto py-8 px-3 md:py-16 md:px-6 text-center">
           {/* Using Next.js Image Optimization */}
-          <Image src="/assets/docmate.png" alt="logo" width={56} height={56} className="mx-auto" />
-
-          <h1 className="font-bold text-lg text-teal-500 md:text-4xl mt-2 md:mt-2">DocMate</h1>
-
+          <Image src="/assets/docmate.png" alt="logo" width={170} height={56} className="mx-auto" />
           <p className="my-1 text-xs md:text-base md:text-center max-w-3xl mx-auto text-center">
           Your trusted consultancy for expert medical advice and healthcare solutions.
           </p>
@@ -28,7 +25,7 @@ const SeeAll = () => {
               placeholder="username@site.com"
               className="input input-bordered join-item"
             />
-            <button className="btn bg-teal-500 border-none hover:bg-teal-700 join-item">
+            <button className="btn shadow-none bg-teal-500 border-none hover:bg-teal-700 join-item">
               Subscribe
             </button>
           </div>
