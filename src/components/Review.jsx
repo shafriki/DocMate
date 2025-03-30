@@ -48,11 +48,7 @@ const Review = () => {
 
                     {/* Second Review */}
                     <div className='flex flex-col bg-gray-50 shadow-xl p-5 rounded-md' data-aos="fade-up">
-<<<<<<< HEAD
-                        <p className='text-justify'>“My knee replacement surgery in India was a success, and the costs were so much lower than in my home country. I’m so grateful to the MedExpert India team!”</p>
-=======
                         <p className='text-justify'>“I was nervous about traveling to India for my spine surgery, but MedExpert India made the process so easy. The care I received was exceptional, and I’m now pain-free!”</p>
->>>>>>> develop
 
                         <div className='flex my-7'>
                             <img src='https://i.ibb.co.com/XrspSkbW/u2.jpg' alt="patient" className='w-12 rounded-full'/>
@@ -71,11 +67,7 @@ const Review = () => {
                 <div data-aos="fade-up">
                     {/* First Review */}
                     <div className='flex flex-col bg-gray-50 shadow-xl p-5 rounded-md mb-5' data-aos="fade-up">
-<<<<<<< HEAD
-                        <p className='text-justify'>“The cardiac care I received in India was world-class. The team at MedExpert India was with me every step of the way, from my first consultation to my follow-up care.”</p>
-=======
                         <p className='text-justify'>“I was nervous about traveling to India for my spine surgery, but MedExpert India made the process so easy. The care I received was exceptional, and I’m now pain-free!”</p>
->>>>>>> develop
 
                         <div className='flex my-7'>
                             <img src='https://i.ibb.co.com/vCgjx0bj/u3.jpg' alt="patient" className='w-12 h-12 rounded-full'/>
