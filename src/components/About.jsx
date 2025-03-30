@@ -1,24 +1,36 @@
-import React from 'react';
+'use client';
+
+import Link from 'next/link';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // Import the AOS styles
 
 const About = () => {
+    useEffect(() => {
+        // Initialize AOS
+        AOS.init({
+            duration: 1000, // Optional: Set the duration for the fade-up animation
+            once: true,     // Optional: Make sure the animation only happens once
+        });
+    }, []);
+
     return (
         <div className='max-w-screen-xl mx-auto my-20'>
-            
             <div className="grid grid-cols-1 md:grid-cols-7 md:grid-rows-6 gap-4 md:h-[500px]">
                 {/* Short Image 1 */}
-                <div className="flex justify-center md:col-span-2 md:row-span-3">
+                <div className="flex justify-center md:col-span-2 md:row-span-3" data-aos="fade-up">
                     <img src="assets/abouts-img1.jpg" className='w-full h-[200px] md:h-full object-cover md:rounded-2xl' alt="" />
                 </div>
                 {/* Short Image 2 */}
-                <div className="flex justify-center md:col-span-2 md:row-span-3 md:col-start-1 md:row-start-4">
+                <div className="flex justify-center md:col-span-2 md:row-span-3 md:col-start-1 md:row-start-4" data-aos="fade-up">
                     <img src="assets/abouts-img1.jpg" className='w-full h-[200px] md:h-full object-cover md:rounded-2xl' alt="" />
                 </div>
                 {/* Long Image */}
-                <div className="flex justify-center md:col-span-2 md:row-span-6 md:col-start-3 md:row-start-1">
+                <div className="flex justify-center md:col-span-2 md:row-span-6 md:col-start-3 md:row-start-1" data-aos="fade-up">
                     <img src="assets/abouts-img2.jpg" className='w-full h-[200px] md:h-full object-cover md:rounded-2xl' alt="" />
                 </div>
                 {/* Description */}
-                <div className="text-left p-4 md:p-8 md:col-span-3 md:row-span-6 md:col-start-5 md:row-start-1 flex flex-col justify-center">
+                <div className="text-left p-4 md:p-8 md:col-span-3 md:row-span-6 md:col-start-5 md:row-start-1 flex flex-col justify-center" data-aos="fade-up">
                     <p className='text-lg md:text-xl font-medium text-[#0EA5E9]'>REGARDING US</p>
                     <h2 className='text-2xl md:text-3xl font-semibold my-2'>We Are Here To Hear & Help With Your Health Problems</h2>
                     <p className='font-semibold text-md md:text-lg my-2'>We are a leading medical tourism facilitator in Bangladesh, providing African patients with world-class healthcare at affordable prices.</p>
@@ -40,9 +52,9 @@ const About = () => {
                             </h2>
                         </div>
                     </div>
-                    <button className='btn bg-[#0EA5E9] hover:bg-[#6dacc9] text-white mt-5 px-4 py-2 rounded-lg'>
+                    <Link href='/pages/about' className='btn bg-[#0EA5E9] hover:bg-[#6dacc9] text-white mt-5 px-4 py-2 rounded-lg'>
                         More About Us
-                    </button>
+                    </Link>
                 </div>
             </div>
         </div>
