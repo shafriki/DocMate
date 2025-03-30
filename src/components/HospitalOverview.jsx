@@ -3,7 +3,7 @@ import { FaMedal, FaHospital, FaUsers, FaUserMd } from "react-icons/fa";
 
 const Service = () => {
     return (
-        <section className="bg-gray-100 py-12">
+        <section className="max-w-screen-xl mx-5 md:mx-auto  my-20 bg-gray-100 py-12">
           <div className="container mx-auto px-6">
             <div className="flex flex-col md:flex-row justify-center items-center text-center space-y-8 md:space-y-0 md:space-x-12">
               {/* Card 1 */}
