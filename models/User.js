@@ -19,6 +19,10 @@ const UserSchema = new mongoose.Schema({
     enum: ["user", "doctor", "admin"],
     default: "user",
   },
+  isPatient: {
+    type: Boolean,
+    default: false, // Defaults to false, meaning the user is not a patient unless specified
+  },
 });
 
 export default mongoose.models.User || mongoose.model("User", UserSchema);
