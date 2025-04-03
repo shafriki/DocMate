@@ -15,7 +15,7 @@ const UserPage = () => {
       const res = await fetch("/api/users");
       const data = await res.json();
       // Filter only normal users (excluding doctors and admins)
-      const userData = data.filter(user => user.role === "user");
+      const userData = data.filter(user => user.role === "user" && user.isPatient);
       setUsers(userData);
     } catch (error) {
       console.error("Error fetching users:", error);
