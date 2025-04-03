@@ -1,7 +1,7 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
-const handler = NextAuth({
+export const authOptions = {
   providers: [
     CredentialsProvider({
       name: "Credentials",
@@ -34,6 +34,11 @@ const handler = NextAuth({
         token.id = user.id;
         token.email = user.email;
         token.role = user.role;
+        // Additional fields for doctor application
+        token.appliedDoctor = user.appliedDoctor || false;
+        token.doctorCvUrl = user.doctorCvUrl || "";
+        token.doctorImageUrl = user.doctorImageUrl || "";
+        token.doctorCategory = user.doctorCategory || "";
       }
       return token;
     },
@@ -41,9 +46,16 @@ const handler = NextAuth({
       session.user.id = token.id;
       session.user.email = token.email;
       session.user.role = token.role;
+      // Pass doctor related fields to session
+      session.user.appliedDoctor = token.appliedDoctor;
+      session.user.doctorCvUrl = token.doctorCvUrl;
+      session.user.doctorImageUrl = token.doctorImageUrl;
+      session.user.doctorCategory = token.doctorCategory;
       return session;
     },
   },
-});
+};
+
+const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };
