@@ -1,5 +1,5 @@
 // import { getServerSession } from "next-auth";
-// import { authOptions } from "../[...nextauth]"; // Adjust path as needed
+// import { authOptions } from "../[...nextauth]/route"; // Adjust path as needed
 // import { NextResponse } from "next/server";
 
 // export async function POST() {

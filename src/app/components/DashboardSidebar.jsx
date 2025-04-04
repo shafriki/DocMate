@@ -53,7 +53,7 @@ export default function DashboardSidebar() {
       { name: "Dashboard Home", href: "/dashboard/user/home" },
       { name: "My Profile", href: "/dashboard/user/profile" },
       { name: "All Doctors", href: "/dashboard/user/doctors" },
-      { name: "My Appointments", href: "/dashboard/user/appointments" },
+      { name: "My Appointments", href: "/dashboard/user/allAppointment" },
     ],
   };
 
