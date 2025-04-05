@@ -1,5 +1,6 @@
 "use client";
 
+import RoleGuard from "@/app/components/RoleGuard";
 import { useEffect, useState } from "react";
 
 export default function DoctorApplicationsPage() {
@@ -42,6 +43,7 @@ export default function DoctorApplicationsPage() {
   };
 
   return (
+    <RoleGuard allowedRoles={["admin"]}>
     <div className="p-6">
       <h1 className="text-2xl font-bold mb-4">Doctor Applications</h1>
       {loading && <p>Loading applications...</p>}
@@ -105,5 +107,6 @@ export default function DoctorApplicationsPage() {
         </table>
       )}
     </div>
+    </RoleGuard>
   );
 }
