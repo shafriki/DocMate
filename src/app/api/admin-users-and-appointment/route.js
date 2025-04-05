@@ -9,7 +9,7 @@ export async function GET(req) {
     await dbConnect();
 
     // Fetch users (only normal users, excluding doctors and admins)
-    const users = await User.find({ role: "user", isPatient: true, isAppointed: false});
+    const users = await User.find({ role: "user", isPatient: true});
 
     // Fetch appointments
     const appointments = await Appointment.find();
