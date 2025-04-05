@@ -1,4 +1,5 @@
 "use client";
+import RoleGuard from "@/app/components/RoleGuard";
 import { useEffect, useState } from "react";
 
 const UserPage = () => {
@@ -14,7 +15,7 @@ const UserPage = () => {
   const fetchUsersAndAppointments = async () => {
     setLoading(true);
     try {
-      const response = await fetch("/api/users-and-appointments");
+      const response = await fetch("/api/admin-users-and-appointment");
       const result = await response.json();
       setData(result);
     } catch (error) {
@@ -44,6 +45,7 @@ const UserPage = () => {
   }
 
   return (
+    <RoleGuard allowedRoles={["admin"]}>
     <div className="p-6 max-w-7xl mx-auto">
       <h2 className="text-2xl md:text-4xl text-center font-bold mb-8 text-[#105852]">
         All Patients
@@ -161,6 +163,7 @@ const UserPage = () => {
         </div>
       </div>
     </div>
+    </RoleGuard>
   );
 };
 

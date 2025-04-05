@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
+import RoleGuard from "@/app/components/RoleGuard";
 
 const AllAppointmentsPage = () => {
   const { data: session } = useSession(); // Get the current user session
@@ -71,6 +72,7 @@ const AllAppointmentsPage = () => {
   }, [session]);
 
   return (
+    <RoleGuard allowedRoles={["user"]}>
     <div className="container mx-auto p-4">
       <h2 className="text-xl md:text-3xl font-bold text-center mb-4">Your Appointments</h2>
       {appointments.length === 0 ? (
@@ -111,6 +113,7 @@ const AllAppointmentsPage = () => {
         </table>
       )}
     </div>
+    </RoleGuard>
   );
 };
 

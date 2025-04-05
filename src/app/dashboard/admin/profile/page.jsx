@@ -15,7 +15,7 @@ const ProfilePage = () => {
   }, [session]);
 
   return (
-    <RoleGuard allowedRoles={["user"]}>
+    <RoleGuard allowedRoles={["admin"]}>
     <div className="min-h-screen bg-gradient-to-b from-teal-50 to-cyan-100">
       {/* Banner */}
       <Parallax
