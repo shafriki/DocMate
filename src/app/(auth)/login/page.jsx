@@ -55,10 +55,10 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
+    <div className="flex min-h-screen  bg-gradient-to-br from-gray-50 to-blue-50">
       {/* Left column (form) */}
       <div className="flex-1 flex items-center justify-center p-8">
-        <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl">
+        <div className="w-full max-w-md border-none p-8 transition-all duration-300 ">
           <div className="mb-8 text-center">
             <h1 className="text-4xl font-bold text-gray-900 mb-2">Welcome Back</h1>
             <p className="text-gray-600">Sign in to continue to your account</p>
@@ -106,7 +106,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={isLoading}
-              className={`w-full py-3 px-4 rounded-lg font-medium text-white transition-all ${
+              className={`w-full cursor-pointer py-3 px-4 rounded-lg font-medium text-white transition-all ${
                 isLoading
                   ? "bg-blue-400 cursor-not-allowed"
                   : "bg-blue-600 hover:bg-blue-700 hover:shadow-md"
@@ -131,7 +131,7 @@ export default function LoginPage() {
       {/* Right column (image) */}
       <div className="hidden md:block md:flex-1 relative">
         <Image
-          src="/login.png"
+          src="/login.jpg"
           alt="Login Hero"
           fill
           className="object-cover object-center"

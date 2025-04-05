@@ -14,8 +14,10 @@ export default function Navbar() {
 
   const navigation = [
     { name: "Home", href: "/" },
-    { name: "Features", href: "/features" },
+   // { name: "Features", href: "/features" },
     { name: "Contact", href: "/pages/contact" },
+    { name: "All Doctors", href: "/pages/alldoctors" },
+    //{ name: "Contact", href: "/contact" },
     { name: "About Us", href: "/pages/about" },
    // ...(session ? [{ name: "Add Doctor", href: "/pages/addDoctor" }] : []),
     ...(session ? [{ name: "Dashboard", href: `/dashboard/${session?.user?.role}/home` }] : []),

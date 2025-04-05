@@ -2,13 +2,12 @@
 
 import RoleGuard from "../../../components/RoleGuard";
 
-export default function AdminHome() {
+export default function UserHome() {
+
   return (
     <RoleGuard allowedRoles={["admin"]}>
-      <div>
-        <h1 className="text-3xl font-bold mb-4">Admin Dashboard Home</h1>
-        <p>Welcome to your admin dashboard. Use the sidebar to manage doctors, patients, and more.</p>
-      </div>
+          <h1 className="text-3xl font-bold text-gray-800">Admin Dashboard</h1>
+          <p className="text-gray-600 mt-2">Manage users, update roles, and delete accounts.</p>
     </RoleGuard>
   );
 }

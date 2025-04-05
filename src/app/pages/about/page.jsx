@@ -6,16 +6,16 @@ export default function About() {
 
     <div>
       {/* About Us Section with Background Image */}
-      <div className="relative w-full h-[80vh] flex items-center justify-center text-center">
+      <div className="relative  w-full h-[50vh]  flex items-center justify-center text-center">
         {/* Background Image with Overlay */}
-        <div className="absolute inset-0">
+        <div className="absolute  inset-0">
           <Image
             src="/assets/aboutUs.jpg"
             alt="Background"
             layout="fill"
             objectFit="cover"
             objectPosition="center"
-            className="opacity-40"
+            className="opacity-40 "
           />
         </div>
 
@@ -26,7 +26,7 @@ export default function About() {
       </div>
 
       {/* Regarding Us Section */}
-      <div className="container mx-auto px-6 py-16 grid md:grid-cols-2 gap-10">
+      <div className="container max-w-screen-xl mx-auto my-20 grid md:grid-cols-2 gap-10">
         {/* Left Text Section */}
         <div className="text-gray-800">
           <h3 className="text-blue-600 uppercase text-sm font-semibold">Regarding Us</h3>
