@@ -14,7 +14,7 @@ export default function Navbar() {
 
   const navigation = [
     { name: "Home", href: "/" },
-    { name: "Features", href: "/features" },
+    { name: "All Doctors", href: "/pages/alldoctors" },
     { name: "Contact", href: "/contact" },
     { name: "About Us", href: "/pages/about" },
     ...(session ? [{ name: "Dashboard", href: `/dashboard/${session?.user?.role}/home` }] : []),

@@ -7,7 +7,7 @@ const Community = () => {
 
             {/* Header */}
             <h1 className="text-center text-2xl md:text-4xl font-bold text-[#34495E] mb-12">
-                Join Our Marathon Achievers
+                Our Community
             </h1>
 
             {/* Marquee Content */}
