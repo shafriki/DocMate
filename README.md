@@ -17,7 +17,7 @@ DocMate aims to simplify and digitize the healthcare appointment process while o
 While developing **DocMate**, our four-member team faced several challenges. Implementing NextAuth with email-password authentication was initially tricky, as we had to deeply understand its flow and configuration. Mongoose was also new to us, making backend development quite challenging, especially when structuring models and handling data operations. Managing role-based access for patients, doctors, and admins required careful planning and testing. We also faced issues with secure routing and maintaining user sessions. Despite these hurdles, we worked together, researched extensively, debugged patiently, and successfully overcame all obstacles to complete the project smoothly and effectively.
 
 
-## List of the concepts used in the Pratiksha News (প্রতীক্ষা নিউজ)
+## List of the concepts used in the DocMate:
 1. **NextAuth Credentials Provider**
 2. **Role-based Access Control (RBAC)**
 3. **Json Web Token(JWT)**
@@ -81,22 +81,22 @@ Follow the steps below to set up the **DocMate** project locally on your machine
 ```bash
 git clone https://github.com/shafriki/DocMate.git
 
-### 📁 Step 2: Navigate into the Project Directory
+📁 Step 2: Navigate into the Project Directory
 cd DocMate
 
-### 📦 Step 3: Install Dependencies
+📦 Step 3: Install Dependencies
 npm install
 # or
 yarn install
 
-### 🔐 Step 4: Configure Environment Variables
+🔐 Step 4: Configure Environment Variables
 Create a .env.local file in the root directory and add the following:
 
 NEXT_PUBLIC_MONGODB_URI=your_mongodb_connection_string
 NEXTAUTH_SECRET=your_nextauth_secret
 NEXTAUTH_URL=http://localhost:3000
 
-### ▶️ Step 5: Run the Development Server
+▶️ Step 5: Run the Development Server
 npm run dev
 # or
 yarn dev
