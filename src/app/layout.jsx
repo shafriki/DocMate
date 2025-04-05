@@ -26,6 +26,9 @@ export default function RootLayout({ children }) {
   const pathname = usePathname();
   return (
     <html lang="en" data-theme='light'>
+    <head>
+        <title>DocMate</title>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

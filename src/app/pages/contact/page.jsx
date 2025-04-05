@@ -3,112 +3,166 @@ import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaFacebook, FaGoogle, FaInstagr
 
 export default function Contact() {
     return (
-        <div>
-            {/* Contact Us Section with Background Image */}
-            <div className="relative w-full h-[80vh] flex items-center justify-center text-center">
-                {/* Background Image with Overlay */}
+        <div className="min-h-screen">
+            {/* Hero Section */}
+            <div className="relative w-full h-64 md:h-[400px] flex items-center justify-center text-center">
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-r from-teal-800/90 to-purple-800/90 z-1"></div>
+                
+                {/* Background Image */}
                 <div className="absolute inset-0">
                     <Image
                         src="/assets/aboutUs.jpg"
                         alt="Background"
                         layout="fill"
                         objectFit="cover"
-                        objectPosition="center"
-                        className="opacity-40"
+                        className="opacity-100"
                     />
                 </div>
 
-                {/* Contact Us Heading */}
-                <div className="relative z-10">
-                    <h2 className="text-5xl font-bold text-white drop-shadow-lg">Contact Us</h2>
+                {/* Heading */}
+                <div className="relative z-10 space-y-4 px-4">
+                    <h2 className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg">
+                        Contact Us
+                    </h2>
+                    <p className="text-white text-lg md:text-xl max-w-2xl mx-auto">
+                        We're here to help and answer any questions you might have.
+                    </p>
                 </div>
             </div>
 
-            {/* Contact Information Section */}
-            <div className="flex justify-center items-center gap-8 py-16 px-4">
-                {/* Location Card */}
-                <div className="bg-gray-100 rounded-lg shadow-md p-6 w-80 text-center">
-                    <FaMapMarkerAlt className="text-4xl text-teal-500 mx-auto mb-4" />
-                    <h3 className="text-lg font-semibold mb-2">Location</h3>
-                    <p className="text-gray-700">Uttara, Dhaka, 110018</p>
-                </div>
+            {/* Contact Cards Section */}
+            <div className="max-w-7xl mx-auto px-4 py-12 md:py-20">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {/* Location Card */}
+                    <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div className="text-center">
+                            <div className="bg-teal-100 w-fit p-4 rounded-full mx-auto">
+                                <FaMapMarkerAlt className="text-3xl text-teal-600" />
+                            </div>
+                            <h3 className="text-xl font-semibold mt-6 mb-2">Our Location</h3>
+                            <p className="text-gray-600">Uttara, Dhaka, 110018</p>
+                        </div>
+                    </div>
 
-                {/* Phone Number Card */}
-                <div className="bg-white rounded-lg shadow-2xl p-6 w-80 text-center">
-                    <FaPhoneAlt className="text-4xl text-teal-500 mx-auto mb-4" />
-                    <h3 className="text-lg font-semibold mb-2">Phone Number</h3>
-                    <p className="text-gray-700">Receptionist No.: 01259847490</p>
-                </div>
+                    {/* Phone Card */}
+                    <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div className="text-center">
+                            <div className="bg-purple-100 w-fit p-4 rounded-full mx-auto">
+                                <FaPhoneAlt className="text-3xl text-purple-600" />
+                            </div>
+                            <h3 className="text-xl font-semibold mt-6 mb-2">Phone Number</h3>
+                            <p className="text-gray-600">Receptionist No.: 01259847490</p>
+                        </div>
+                    </div>
 
-                {/* Email Address Card */}
-                <div className="bg-gray-100 rounded-lg shadow-md p-6 w-80 text-center">
-                    <FaEnvelope className="text-4xl text-teal-500 mx-auto mb-4" />
-                    <h3 className="text-lg font-semibold mb-2">Email Address</h3>
-                    <p className="text-gray-700">info@docMate.com</p>
-                </div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-6  max-w-6xl mx-auto">
-            {/* Get In Touch Section - Left Side */}
-            <div className="text-center md:text-left">
-                <h3 className="text-purple-700 font-bold uppercase">Contact Us</h3>
-                <h2 className="text-4xl font-bold text-gray-900 mt-2">
-                    Get In Touch For More Information !!
-                </h2>
-                <p className="text-gray-700 mt-4">
-                    Get in touch with us today for expert medical assistance and a hassle-free journey
-                    to world-class heart treatment in India!
-                </p>
-
-                {/* Social Media Links */}
-                <h3 className="text-lg font-semibold text-gray-800 mt-6">Follow Us On Social Media:</h3>
-                <div className="flex justify-center md:justify-start gap-4 mt-4">
-                    <FaFacebook className="text-teal-500 text-3xl cursor-pointer" />
-                    <FaGoogle className="text-teal-500 text-3xl cursor-pointer" />
-                    <FaInstagram className="text-teal-500 text-3xl cursor-pointer" />
-                    <FaYoutube className="text-teal-500 text-3xl cursor-pointer" />
-                    <FaPinterest className="text-teal-500 text-3xl cursor-pointer" />
+                    {/* Email Card */}
+                    <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div className="text-center">
+                            <div className="bg-teal-100 w-fit p-4 rounded-full mx-auto">
+                                <FaEnvelope className="text-3xl text-teal-600" />
+                            </div>
+                            <h3 className="text-xl font-semibold mt-6 mb-2">Email Address</h3>
+                            <p className="text-gray-600">info@docMate.com</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            {/* Email Section - Right Side */}
-            <div className="flex justify-center items-center min-h-screen  px-4">
-            <div className="bg-white  w-full max-w-lg">
-                <form className="space-y-6">
-                    <input
-                        type="text"
-                        placeholder="Enter Your Full Name.."
-                        className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
-                        required
-                    />
-                    <input
-                        type="email"
-                        placeholder="Enter Your Email Address.."
-                        className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
-                        required
-                    />
-                    <input
-                        type="text"
-                        placeholder="Enter Your Subject"
-                        className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
-                        required
-                    />
-                    <textarea
-                        placeholder="Enter your Message.."
-                        className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 h-32"
-                        required
-                    />
-                    <button
-                        type="submit"
-                        className="w-full bg-teal-500 text-white py-3 rounded-lg hover:bg-teal-600 transition duration-300"
-                    >
-                        Submit
-                    </button>
-                </form>
+            {/* Contact Content Section */}
+            <div className="max-w-7xl mx-auto px-4 py-12 md:py-20">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20">
+                    {/* Left Column */}
+                    <div className="space-y-8">
+                        <div className="space-y-4">
+                            <span className="text-teal-600 font-semibold uppercase tracking-wide">
+                                Stay Connected
+                            </span>
+                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                                Let's Start a Conversation
+                            </h2>
+                            <p className="text-gray-600 text-lg">
+                                Have questions about our services or need medical assistance? 
+                                Our team is here to help you with world-class healthcare solutions.
+                            </p>
+                        </div>
+
+                        {/* Social Media */}
+                        <div className="space-y-4">
+                            <h3 className="text-xl font-semibold text-gray-800">
+                                Follow Us On:
+                            </h3>
+                            <div className="flex gap-6">
+                                {[
+                                    { icon: FaFacebook, color: "#3b5998" },
+                                    { icon: FaGoogle, color: "#db4437" },
+                                    { icon: FaInstagram, color: "#e1306c" },
+                                    { icon: FaYoutube, color: "#ff0000" },
+                                    { icon: FaPinterest, color: "#bd081c" },
+                                ].map((SocialIcon, idx) => (
+                                    <SocialIcon.icon 
+                                        key={idx}
+                                        className="text-3xl cursor-pointer hover:opacity-80 transition-opacity"
+                                        style={{ color: SocialIcon.color }}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Right Column - Contact Form */}
+                    <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg">
+                        <form className="space-y-6">
+                            <div>
+                                <label className="block text-gray-700 mb-2">Full Name</label>
+                                <input
+                                    type="text"
+                                    placeholder="John Doe"
+                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                                    required
+                                />
+                            </div>
+                            
+                            <div>
+                                <label className="block text-gray-700 mb-2">Email Address</label>
+                                <input
+                                    type="email"
+                                    placeholder="john@example.com"
+                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                                    required
+                                />
+                            </div>
+                            
+                            <div>
+                                <label className="block text-gray-700 mb-2">Subject</label>
+                                <input
+                                    type="text"
+                                    placeholder="How can we help?"
+                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                                    required
+                                />
+                            </div>
+                            
+                            <div>
+                                <label className="block text-gray-700 mb-2">Message</label>
+                                <textarea
+                                    placeholder="Your message here..."
+                                    rows="4"
+                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                                    required
+                                />
+                            </div>
+                            
+                            <button
+                                type="submit"
+                                className="w-full bg-teal-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-teal-700 transition-colors"
+                            >
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
             </div>
-        </div>
-        </div>
-
-
         </div>
     );
 }

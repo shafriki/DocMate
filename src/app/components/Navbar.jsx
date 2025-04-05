@@ -29,7 +29,7 @@ export default function Navbar() {
   const isActive = (href) => pathname === href;
 
   return (
-    <nav className="bg-gradient-to-r from-[#042020] via-[#1e4046] to-[#0EA5E9] shadow-lg">
+    <nav className="bg-gradient-to-r py-1 sticky top-0 z-50 opacity-90 from-[#042020] via-[#1e4046] to-[#0EA5E9] shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
