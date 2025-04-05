@@ -19,6 +19,7 @@ export default function Navbar() {
     { name: "All Doctors", href: "/pages/alldoctors" },
     //{ name: "Contact", href: "/contact" },
     { name: "About Us", href: "/pages/about" },
+    { name: "Nexa", href: "/pages/Nexa" },
    // ...(session ? [{ name: "Add Doctor", href: "/pages/addDoctor" }] : []),
     ...(session ? [{ name: "Dashboard", href: `/dashboard/${session?.user?.role}/home` }] : []),
     
