@@ -14,10 +14,14 @@ export default function Navbar() {
 
   const navigation = [
     { name: "Home", href: "/" },
+   // { name: "Features", href: "/features" },
+    { name: "Contact", href: "/pages/contact" },
     { name: "All Doctors", href: "/pages/alldoctors" },
-    { name: "Contact", href: "/contact" },
+    //{ name: "Contact", href: "/contact" },
     { name: "About Us", href: "/pages/about" },
+   // ...(session ? [{ name: "Add Doctor", href: "/pages/addDoctor" }] : []),
     ...(session ? [{ name: "Dashboard", href: `/dashboard/${session?.user?.role}/home` }] : []),
+    
   ];
 
   const closeMenu = () => setIsOpen(false);
@@ -25,7 +29,7 @@ export default function Navbar() {
   const isActive = (href) => pathname === href;
 
   return (
-    <nav className="bg-gradient-to-r from-[#042020] via-[#1e4046] to-[#0EA5E9] shadow-lg">
+    <nav className="bg-gradient-to-r py-1 sticky top-0 z-50 opacity-90 from-[#042020] via-[#1e4046] to-[#0EA5E9] shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
