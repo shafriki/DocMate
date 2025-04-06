@@ -2,8 +2,20 @@
 import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 
+const categories = [
+  "all",
+  "general",
+  "cardiology",
+  "dermatology",
+  "neurology",
+  "pediatrics",
+  "other",
+];
+
 const DoctorPage = () => {
   const [doctors, setDoctors] = useState([]);
+  const [filteredDoctors, setFilteredDoctors] = useState([]);
+  const [filterCategory, setFilterCategory] = useState("all");
   const [showModal, setShowModal] = useState(false);
   const [selectedDoctor, setSelectedDoctor] = useState(null);
   const [appointmentDate, setAppointmentDate] = useState("");
@@ -14,6 +26,38 @@ const DoctorPage = () => {
   const { data: session } = useSession();
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 8; // Show 8 doctors per page
+
+  useEffect(() => {
+    fetchDoctors();
+  }, []);
+
+  useEffect(() => {
+    // Filter doctors when the filterCategory changes or when doctors are fetched
+    if (filterCategory === "all") {
+      setFilteredDoctors(doctors);
+    } else {
+      // Filter by matching lowercase category
+      setFilteredDoctors(
+        doctors.filter(
+          (doctor) =>
+            doctor.doctorCategory?.toLowerCase() === filterCategory.toLowerCase()
+        )
+      );
+    }
+    // Reset to the first page when filtering
+    setCurrentPage(1);
+  }, [filterCategory, doctors]);
+
+  const fetchDoctors = async () => {
+    try {
+      const res = await fetch("/api/users");
+      const data = await res.json();
+      const doctorData = data.filter((user) => user.role === "doctor");
+      setDoctors(doctorData);
+    } catch (error) {
+      console.error("Error fetching doctors:", error);
+    }
+  };
 
   const handleAppointmentClick = (doctor) => {
     setSelectedDoctor(doctor);
@@ -82,24 +126,10 @@ const DoctorPage = () => {
     }
   };
 
-  useEffect(() => {
-    fetchDoctors();
-  }, []);
-
-  const fetchDoctors = async () => {
-    try {
-      const res = await fetch("/api/users");
-      const data = await res.json();
-      const doctorData = data.filter((user) => user.role === "doctor");
-      setDoctors(doctorData);
-    } catch (error) {
-      console.error("Error fetching doctors:", error);
-    }
-  };
-
-  const totalDoctors = doctors.length;
+  // Pagination logic on filtered doctors
+  const totalDoctors = filteredDoctors.length;
   const totalPages = Math.ceil(totalDoctors / itemsPerPage);
-  const currentDoctors = doctors.slice(
+  const currentDoctors = filteredDoctors.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
@@ -116,6 +146,24 @@ const DoctorPage = () => {
         All Doctors
       </h2>
 
+      {/* Filter Buttons */}
+      <div className="flex flex-wrap justify-center gap-2 mb-6">
+        {categories.map((cat) => (
+          <button
+            key={cat}
+            onClick={() => setFilterCategory(cat)}
+            className={`px-4 py-2 border rounded transition-colors ${
+              filterCategory === cat
+                ? "bg-[#105852] text-white"
+                : "bg-white text-[#105852] hover:bg-[#dcf1ef]"
+            }`}
+          >
+            {cat.charAt(0).toUpperCase() + cat.slice(1)}
+          </button>
+        ))}
+      </div>
+
+      {/* Doctor Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4">
         {currentDoctors.map((doctor) => (
           <div key={doctor._id} className="card bg-base-100 shadow-sm relative">
@@ -129,23 +177,33 @@ const DoctorPage = () => {
                 className="w-full h-52 object-cover"
               />
             </figure>
-
             <div className="card-body">
               <h2 className="card-title">{doctor.name}</h2>
               <p>{doctor.email}</p>
               <div className="justify-end card-actions">
-                <button
-                  className="btn btn-primary"
-                  onClick={() => handleAppointmentClick(doctor)}
-                >
-                  Appointment Now
-                </button>
+                {session && session.user.role === "user" ? (
+                  <button
+                    className="btn btn-primary"
+                    onClick={() => handleAppointmentClick(doctor)}
+                  >
+                    Appointment Now
+                  </button>
+                ) : (
+                  <button
+                    className="btn btn-disabled"
+                    disabled
+                    title="Please log in to book an appointment"
+                  >
+                    Login to Book
+                  </button>
+                )}
               </div>
             </div>
           </div>
         ))}
       </div>
 
+      {/* Pagination Controls */}
       <div className="flex flex-col md:flex-row justify-between items-center my-6 px-4">
         <p className="text-sm text-[#52a09a] font-semibold">
           Showing {(currentPage - 1) * itemsPerPage + 1} to{" "}
@@ -190,13 +248,13 @@ const DoctorPage = () => {
         </div>
       </div>
 
+      {/* Appointment Modal */}
       {showModal && selectedDoctor && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 px-4">
           <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
             <h3 className="text-xl font-bold mb-4">
               Book Appointment with {selectedDoctor.name}
             </h3>
-
             <div className="mb-4">
               <label className="block font-semibold">Patient Name:</label>
               <input
@@ -241,7 +299,6 @@ const DoctorPage = () => {
                 onChange={(e) => setAppointmentTime(e.target.value)}
               />
             </div>
-
             <div className="flex justify-end space-x-2">
               <button
                 className="btn btn-error"
